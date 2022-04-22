@@ -6,7 +6,7 @@ const path = './CHANGELOG.md'
 // and in getTaggedVersion put package logic
 const exec = require('child_process').exec;
 
-const result = function(command, cb){
+const result = (command, cb) => {
     var child = exec(command, function(err, stdout, stderr){
         if(err != null){
             return cb(new Error(err), null);
