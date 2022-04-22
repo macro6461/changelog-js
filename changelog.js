@@ -7,7 +7,7 @@ const path = './CHANGELOG.md'
 const exec = require('child_process').exec;
 
 const result = (command, cb) => {
-    var child = exec(command, function(err, stdout, stderr){
+    var child = exec(command, (err, stdout, stderr)=>{
         if(err != null){
             return cb(new Error(err), null);
         }else if(typeof(stderr) != "string"){
@@ -20,7 +20,7 @@ const result = (command, cb) => {
 }
 
 const getTaggedVersion = () => {
-    result("git describe --long", function(err, response){
+    result("git describe --long", (err, response) => {
         if(!err){
             console.log(response);
         }else {
