@@ -16,5 +16,5 @@ This is the pure javascript code for creating and updating a changelog.
 
 ## Supported Languages (with repo links)
 - [Bash](https://github.com/macro6461/changelog-bash)
-- JavaScript (TBD)
+- [JavaScript](https://github.com/macro6461/changelog-js)
 - [Python](https://github.com/macro6461/changelog-python)
