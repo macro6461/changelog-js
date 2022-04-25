@@ -52,8 +52,7 @@ ${item}
 
 const checkIfItemExists = (str) => {
     const contents = readFileSync('CHANGELOG.md', 'utf-8');
-    const result = contents.includes(str);
-    return result;
+    return contents.includes(str);
 }
 
 const writeChangelog = () =>{
