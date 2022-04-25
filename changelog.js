@@ -51,19 +51,19 @@ ${item}
 `
 
 const checkIfItemExists = (str) => {
-    const contents = readFileSync('CHANGELOG.md', 'utf-8');
-    return contents.includes(str);
+    const contents = readFileSync('CHANGELOG.md', 'utf-8')
+    return contents.indexOf(str) > -1
 }
 
 const writeChangelog = () =>{
-    const fileData = readFileSync("CHANGELOG.md", { encoding: "utf8" });
+    const fileData = readFileSync("CHANGELOG.md", { encoding: "utf8" })
     const fileDataArray = fileData.split("\n");
     const iterateArr = [...fileDataArray]
     for (var i = 0; i < iterateArr.length; i++){
         if (fileDataArray[i].indexOf("## [Unreleased]") > -1){
-            fileDataArray.splice(i + 1, 0, `\n${item}\n### Added\n- ADD CHANGE HERE!`);
+            fileDataArray.splice(i + 1, 0, `\n${item}\n### Added\n- ADD CHANGE HERE!`)
             const newFileData = fileDataArray.join("\n");
-            writeFileSync("CHANGELOG.md", newFileData, { encoding: "utf8" });
+            writeFileSync("CHANGELOG.md", newFileData, { encoding: "utf8" })
             break
         }
     }
